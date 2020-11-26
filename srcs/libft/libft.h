@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mraymun <mraymun@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hasvv <awendo@mail.ru>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 15:34:40 by mraymun           #+#    #+#             */
-/*   Updated: 2020/11/04 18:51:40 by mraymun          ###   ########.fr       */
+/*   Updated: 2020/11/26 02:58:10 by hasvv            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdint.h>
 
 typedef struct		s_list
 {
@@ -45,7 +46,9 @@ char				*ft_strncat(char *s1, char *s2, size_t n);
 char				*ft_strcpy(char *dst, char *src);
 char				*ft_strncpy(char *dst, char *src, size_t n);
 char				*ft_strdup(char *s);
+char				*ft_strndup(const char *s1, size_t n);
 char				*ft_itoa(int n);
+char				*ft_itoa_base(uintmax_t num, uintmax_t base);
 char				*ft_strnew(int size);
 char				*ft_strchr(char *s, int c);
 char				*ft_strrchr(char *s, int c);
@@ -63,7 +66,7 @@ void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memchr(const void *s, int c, size_t n);
 void				ft_bzero(void *s, size_t n);
 void				ft_strclr(char *s);
-void				ft_putnbr_fd(int n, int fd);
+void				ft_putnbr_fd(intmax_t n, int fd);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putstr_fd(char *s, int fd);

@@ -6,7 +6,7 @@
 /*   By: hasvv <awendo@mail.ru>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 22:02:38 by hasvv             #+#    #+#             */
-/*   Updated: 2020/11/23 15:10:04 by hasvv            ###   ########.fr       */
+/*   Updated: 2020/11/24 20:09:41 by hasvv            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,16 @@ unsigned char	ft_parse_flags(const char **format, t_tab *tab)
 	{
 		if (**format == '-')
 			flags = flags | FLG_MINUS;
-		if (**format == '+')
+		else if (**format == '+')
 			flags = flags | FLG_PLUS;
-		if (**format == ' ')
+		else if (**format == ' ')
 			flags = flags | FLG_SPACE;
-		if (**format == '#')
+		else if (**format == '#')
 			flags = flags | FLG_HASH;
-		if (**format == '0')
+		else if (**format == '0')
 			flags = flags | FLG_ZERO;
+		else
+			return (FLG_ERROR);
 		(*format)++;
 	}
 	return (flags);

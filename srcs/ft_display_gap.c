@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_display_gap.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hasvv <awendo@mail.ru>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/02 18:03:45 by mraymun           #+#    #+#             */
-/*   Updated: 2020/11/26 02:57:25 by hasvv            ###   ########.fr       */
+/*   Created: 2020/11/22 22:02:38 by hasvv             #+#    #+#             */
+/*   Updated: 2020/11/24 21:42:21 by hasvv            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/ft_printf.h"
+#include "libft/libft.h"
 
-void	ft_putnbr_fd(intmax_t n, int fd)
+int		ft_display_gap(int n, char c)
 {
-	(n < 0) ? ft_putchar_fd('-', fd) : (void)0;
-	if (n >= 10)
+	int		i;
+
+	i = 0;
+	while (i < n)
 	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd(n % 10, fd);
+		write(1, &c, 1);
+		i++;
 	}
-	else
-		ft_putchar_fd(n + '0', fd);
+	return (n);
 }

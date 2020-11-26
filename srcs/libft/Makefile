@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mraymun <mraymun@student.21-school.ru>     +#+  +:+       +#+         #
+#    By: hasvv <awendo@mail.ru>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/28 14:29:41 by mraymun           #+#    #+#              #
-#    Updated: 2020/11/08 13:31:56 by mraymun          ###   ########.fr        #
+#    Updated: 2020/11/26 01:50:45 by hasvv            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SOURCES =	ft_atoi.c\
 			ft_isprint.c\
 			ft_isspace.c\
 			ft_itoa.c\
+			ft_itoa_base.c\
 			ft_memalloc.c\
 			ft_memccpy.c\
 			ft_memchr.c\
@@ -40,6 +41,7 @@ SOURCES =	ft_atoi.c\
 			ft_strcmp.c\
 			ft_strcpy.c\
 			ft_strdup.c\
+			ft_strndup.c\
 			ft_strjoin.c\
 			ft_strlcat.c\
 			ft_strlcpy.c\

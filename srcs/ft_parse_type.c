@@ -6,7 +6,7 @@
 /*   By: hasvv <awendo@mail.ru>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 22:01:23 by hasvv             #+#    #+#             */
-/*   Updated: 2020/11/23 11:25:02 by hasvv            ###   ########.fr       */
+/*   Updated: 2020/11/25 20:03:46 by hasvv            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,13 @@
 char	ft_parse_type(const char *format)
 {
 	const char	types[14] = "%cspdiuxXnfge";
-	char		*tmp;
-	int			i;
 
-	i = 0;
-	while (types[i])
+	format++;
+	while (*format)
 	{
-		if ((tmp = ft_strchr((char*)(format + 1), types[i])))
-			return (*tmp);
-		i++;
+		if (ft_strchr((char*)types, (char)*format))
+			return ((char)*format);
+		format++;
 	}
 	return (0);
 }

@@ -1,33 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parse_len.c                                     :+:      :+:    :+:   */
+/*   ft_processor.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hasvv <awendo@mail.ru>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 22:02:38 by hasvv             #+#    #+#             */
-/*   Updated: 2020/11/24 17:58:24 by hasvv            ###   ########.fr       */
+/*   Updated: 2020/11/26 03:46:28 by hasvv            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 #include "libft/libft.h"
 
-char	ft_parse_len(const char **format, t_tab *tab)
+int		ft_processor(t_tab *tab)
 {
-	char	len;
+	int		len;
 
 	len = 0;
-	while (**format && **format != tab->type
-	&& **format != 'l' && **format != 'h')
-		(*format)++;
-	if (**format == 'l' && *(*format + 1) == 'l')
-		len = 'L';
-	else if (**format == 'h' && *(*format + 1) == 'h')
-		len = 'H';
-	else if (**format == 'l')
-		len = 'l';
-	else if (**format == 'h')
-		len = 'h';
+	if (tab->type == '%')
+	{
+		write(1, "%", 1);
+		return (1);
+	}
+	if (tab->type == 'd' || tab->type == 'i')
+		len = ft_display_d(tab);
+	if (tab->type == 'u')
+		len = ft_display_u(tab);
+	if (tab->type == 'c')
+		len = ft_display_c(tab);
+	if (tab->type == 's')
+		len = ft_display_s(tab);
+	if (tab->type == 'p')
+		len = ft_display_p(tab);
+	if (tab->type == 'x' || tab->type == 'X')
+		len = ft_display_x(tab);
 	return (len);
 }
